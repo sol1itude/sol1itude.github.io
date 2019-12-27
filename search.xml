@@ -3,6 +3,75 @@
   
     
     <entry>
+      <title><![CDATA[yarn和npm区别]]></title>
+      <url>/2019/12/27/yarn%E5%92%8Cnpm%E5%8C%BA%E5%88%AB/</url>
+      <content type="html"><![CDATA[<p>下面列举了一些yarn和npm在日常使用中的一些区别</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">对比</th>
+<th style="text-align:center">yarn</th>
+<th style="text-align:center">npm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">初始化</td>
+<td style="text-align:center">yarn init</td>
+<td style="text-align:center">npm init</td>
+</tr>
+<tr>
+<td style="text-align:center">安装依赖</td>
+<td style="text-align:center">yarn install或者yarn</td>
+<td style="text-align:center">npm install</td>
+</tr>
+<tr>
+<td style="text-align:center">新增依赖</td>
+<td style="text-align:center">yarn add axios</td>
+<td style="text-align:center">npm install axios –save</td>
+</tr>
+<tr>
+<td style="text-align:center">删除依赖</td>
+<td style="text-align:center">yarn remove axios</td>
+<td style="text-align:center">npm uninstall axios –save</td>
+</tr>
+<tr>
+<td style="text-align:center">更新依赖</td>
+<td style="text-align:center">yarn upgrade</td>
+<td style="text-align:center">npm update</td>
+</tr>
+<tr>
+<td style="text-align:center">全局安装或删除</td>
+<td style="text-align:center">yarn global remove vue-cli</td>
+<td style="text-align:center">npm uninstall vue-cli -g</td>
+</tr>
+<tr>
+<td style="text-align:center">同时下载多个</td>
+<td style="text-align:center">yarn add axios vue-axios</td>
+<td style="text-align:center">npm install –save axios vue-axios</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[VueCli 3.0使用人适配移动端步骤]]></title>
+      <url>/2019/12/27/rem/</url>
+      <content type="html"><![CDATA[<p>首先需要先安装’lib-flexible’插件，安装成功之后再main.js引入。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm i lib-flexible</div><div class="line"><span class="comment">//在main.js引入</span></div><div class="line"><span class="keyword">import</span> <span class="string">'lib-flexible'</span></div></pre></td></tr></table></figure>
+<p>安装postcss-px2rem插件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm i postcss-px2rem</div></pre></td></tr></table></figure>
+<p>最后在package.json中配置一下，添加如下代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="string">"postcss"</span>: &#123;</div><div class="line">    <span class="string">"plugins"</span>: &#123;</div><div class="line">        <span class="string">"autoprefixer"</span>: &#123;&#125;,</div><div class="line">        <span class="string">"postcss-px2rem"</span>: &#123;</div><div class="line">            <span class="string">"remUnit"</span>: <span class="number">37.5</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>接下来就可以直接在.vue文件中用px做单位了，运行时会自动转化为rem单位。如果有些样式不需要rem，直接把px写成大写PX就行了。</p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[收集到的正则表达式]]></title>
       <url>/2019/01/16/regularExpression/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>正则表达式在日常开发中经常用到，但是每次都记不住，所以收集了一些常见的正则表达式。</p>
