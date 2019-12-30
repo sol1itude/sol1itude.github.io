@@ -3,6 +3,26 @@
   
     
     <entry>
+      <title><![CDATA[Flutter环境配置]]></title>
+      <url>/2019/12/30/flutter/</url>
+      <content type="html"><![CDATA[<h1 id="1-从如下地址下载对应的flutter-SDK，点击如图下载最新版本sdk。"><a href="#1-从如下地址下载对应的flutter-SDK，点击如图下载最新版本sdk。" class="headerlink" title="1.从如下地址下载对应的flutter SDK，点击如图下载最新版本sdk。"></a>1.从如下地址下载对应的flutter SDK，点击如图下载最新版本sdk。</h1><p>flutterSDK下载地址：<a href="https://flutter.dev/docs/get-started/install/windows" target="_blank" rel="external">https://flutter.dev/docs/get-started/install/windows</a></p>
+<p><img src="/2019/12/30/flutter/1.png" alt="Image text"></p>
+<h1 id="2-将sdk复制到系统盘并解压，位置随意。如下图所示"><a href="#2-将sdk复制到系统盘并解压，位置随意。如下图所示" class="headerlink" title="2.将sdk复制到系统盘并解压，位置随意。如下图所示"></a>2.将sdk复制到系统盘并解压，位置随意。如下图所示</h1><p><img src="/2019/12/30/flutter/2.png" alt="Image text"></p>
+<h1 id="3-打开解压的flutter文件夹，找到bin，复制如下图地址"><a href="#3-打开解压的flutter文件夹，找到bin，复制如下图地址" class="headerlink" title="3.打开解压的flutter文件夹，找到bin，复制如下图地址"></a>3.打开解压的flutter文件夹，找到bin，复制如下图地址</h1><p><img src="/2019/12/30/flutter/3.png" alt="Image text"></p>
+<h1 id="4-桌面找到-此电脑–-gt-右击选择属性–-gt-高级系统设置–-gt-环境变量–-gt-找到系统变量–-gt-Path–-gt-编辑–-gt-新建–-gt-粘贴第三步复制的地址–-gt-点击确定保存"><a href="#4-桌面找到-此电脑–-gt-右击选择属性–-gt-高级系统设置–-gt-环境变量–-gt-找到系统变量–-gt-Path–-gt-编辑–-gt-新建–-gt-粘贴第三步复制的地址–-gt-点击确定保存" class="headerlink" title="4.桌面找到 此电脑–&gt;右击选择属性–&gt;高级系统设置–&gt;环境变量–&gt;找到系统变量–&gt;Path–&gt;编辑–&gt;新建–&gt;粘贴第三步复制的地址–&gt;点击确定保存"></a>4.桌面找到 此电脑–&gt;右击选择属性–&gt;高级系统设置–&gt;环境变量–&gt;找到系统变量–&gt;Path–&gt;编辑–&gt;新建–&gt;粘贴第三步复制的地址–&gt;点击确定保存</h1><p><img src="/2019/12/30/flutter/4.png" alt="Image text"></p>
+<h1 id="5-配置国内镜像。桌面找到-此电脑–-gt-右击选择属性–-gt-高级系统设置–-gt-环境变量–-gt-找到用户变量–-gt-点击新建"><a href="#5-配置国内镜像。桌面找到-此电脑–-gt-右击选择属性–-gt-高级系统设置–-gt-环境变量–-gt-找到用户变量–-gt-点击新建" class="headerlink" title="5.配置国内镜像。桌面找到 此电脑–&gt;右击选择属性–&gt;高级系统设置–&gt;环境变量–&gt;找到用户变量–&gt;点击新建"></a>5.配置国内镜像。桌面找到 此电脑–&gt;右击选择属性–&gt;高级系统设置–&gt;环境变量–&gt;找到用户变量–&gt;点击新建</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">PUB_HOSTED_URL=https:<span class="comment">//pub.flutter-io.cn</span></div><div class="line"></div><div class="line">FLUTTER_STORAGE_BASE_URL=https:<span class="comment">//storage.flutter-io.cn</span></div></pre></td></tr></table></figure>
+<p><img src="/2019/12/30/flutter/5.png" alt="Image text"></p>
+<h1 id="6-配置Android-sdk，找到用户变量，点击新建，如下图所示。"><a href="#6-配置Android-sdk，找到用户变量，点击新建，如下图所示。" class="headerlink" title="6.配置Android sdk，找到用户变量，点击新建，如下图所示。"></a>6.配置Android sdk，找到用户变量，点击新建，如下图所示。</h1><p>Android sdk在Android studio中的位置<br><img src="/2019/12/30/flutter/6.1.png" alt="Image text"><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ANDROID_HOME=D:\AndroidSDK <span class="comment">//该sdk地址是你安装Android studio的时候配置的sdk的地址</span></div></pre></td></tr></table></figure></p>
+<p><img src="/2019/12/30/flutter/6.png" alt="Image text"></p>
+<h1 id="7-安装Android-studio中的Flutter和Dart插件。"><a href="#7-安装Android-studio中的Flutter和Dart插件。" class="headerlink" title="7.安装Android studio中的Flutter和Dart插件。"></a>7.安装Android studio中的Flutter和Dart插件。</h1><p><img src="/2019/12/30/flutter/7.png" alt="Image text"></p>
+<h1 id="8-重启电脑。"><a href="#8-重启电脑。" class="headerlink" title="8.重启电脑。"></a>8.重启电脑。</h1><h1 id="9-打开命令行工具输入flutter-doctor，如下图所示表明环境配置成功，接下来就能进行flutter的开发了。"><a href="#9-打开命令行工具输入flutter-doctor，如下图所示表明环境配置成功，接下来就能进行flutter的开发了。" class="headerlink" title="9.打开命令行工具输入flutter doctor，如下图所示表明环境配置成功，接下来就能进行flutter的开发了。"></a>9.打开命令行工具输入flutter doctor，如下图所示表明环境配置成功，接下来就能进行flutter的开发了。</h1><p><img src="/2019/12/30/flutter/9.png" alt="Image text"></p>
+<p>出现感叹号的原因是我没有连接设备，所以提示No devices available</p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[yarn和npm区别]]></title>
       <url>/2019/12/27/yarn%E5%92%8Cnpm%E5%8C%BA%E5%88%AB/</url>
       <content type="html"><![CDATA[<p>下面列举了一些yarn和npm在日常使用中的一些区别</p>
