@@ -86,12 +86,16 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="博客">
-<meta property="og:url" content="http://yoursite.com/archives/2019/12/index.html">
+<meta name="description" content="当我们通过v-html渲染时，有时会需要修改一下样式，但是无法直接在style中修改样式，这是因为我们style带有scoped了，scoped属性导致css只对当前组件生效，而v-html渲染出来的内容可以理解为是子组件内容，css无法穿透，无法给子组件添加上对应的css属性。所以我们可以把scoped属性去掉，但是这样别的组件也会受影响，最好的办法就是在当前组件的最外层div加上一个固定id标">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解决v-html元素中的标签样式">
+<meta property="og:url" content="http://yoursite.com/2020/04/24/解决v-html元素中的标签样式/index.html">
 <meta property="og:site_name" content="博客">
+<meta property="og:description" content="当我们通过v-html渲染时，有时会需要修改一下样式，但是无法直接在style中修改样式，这是因为我们style带有scoped了，scoped属性导致css只对当前组件生效，而v-html渲染出来的内容可以理解为是子组件内容，css无法穿透，无法给子组件添加上对应的css属性。所以我们可以把scoped属性去掉，但是这样别的组件也会受影响，最好的办法就是在当前组件的最外层div加上一个固定id标">
+<meta property="og:updated_time" content="2020-04-24T08:11:25.654Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="博客">
+<meta name="twitter:title" content="解决v-html元素中的标签样式">
+<meta name="twitter:description" content="当我们通过v-html渲染时，有时会需要修改一下样式，但是无法直接在style中修改样式，这是因为我们style带有scoped了，scoped属性导致css只对当前组件生效，而v-html渲染出来的内容可以理解为是子组件内容，css无法穿透，无法给子组件添加上对应的css属性。所以我们可以把scoped属性去掉，但是这样别的组件也会受影响，最好的办法就是在当前组件的最外层div加上一个固定id标">
 
 
 
@@ -121,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2019/12/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/04/24/解决v-html元素中的标签样式/"/>
 
 
 
 
 
-  <title>归档 | 博客</title>
+  <title>解决v-html元素中的标签样式 | 博客</title>
   
 
 
@@ -146,7 +150,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband">
       <a href="https://github.com/sol1itude"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub"></a>
     </div>
@@ -222,148 +226,182 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/24/解决v-html元素中的标签样式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王风杰">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">解决v-html元素中的标签样式</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-24T15:59:09+08:00">
+                2020-04-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 15 篇日志。 继续努力。
-      </span>
 
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/04/24/解决v-html元素中的标签样式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/24/解决v-html元素中的标签样式/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
-        
+          
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/12/30/flutter/" itemprop="url">
+          
+            <div class="post-wordcount">
               
-                <span itemprop="name">Flutter环境配置</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  302
+                </span>
               
-            </a>
-        
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-12-30T14:13:17+08:00"
-              content="2019-12-30" >
-          12-30
-        </time>
-      </div>
+              
+                <span class="post-meta-divider">|</span>
+              
 
-    </header>
-  </article>
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
 
+          
 
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/12/27/yarn和npm区别/" itemprop="url">
-              
-                <span itemprop="name">yarn和npm区别</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-12-27T11:10:57+08:00"
-              content="2019-12-27" >
-          12-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/12/27/rem/" itemprop="url">
-              
-                <span itemprop="name">VueCli 3.0使用rem适配移动端步骤</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-12-27T11:00:39+08:00"
-              content="2019-12-27" >
-          12-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p>当我们通过v-html渲染时，有时会需要修改一下样式，但是无法直接在style中修改样式，这是因为我们style带有scoped了，scoped属性导致css只对当前组件生效，而v-html渲染出来的内容可以理解为是子组件内容，css无法穿透，无法给子组件添加上对应的css属性。所以我们可以把scoped属性去掉，但是这样别的组件也会受影响，最好的办法就是在当前组件的最外层div加上一个固定id标识，这样就不会污染别的组件的css了。还有个方法就是创建两个style标签，一个带scoped，一个不带scoped，不带scoped的只写需要更改css样式的元素，类名一定要唯一，避免污染别的组件。其实scoped看起来很美好，但是含有很多的坑，所以，不推荐使用scoped属性，而通过在外层dom上添加唯一的class来区分不同组件。这种方法既实现了类似于scoped的效果，又方便修改各种第三方组件的样式，代码看起来也相对舒适。</p>
 
       
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/30/flutter/" rel="next" title="Flutter环境配置">
+                <i class="fa fa-chevron-left"></i> Flutter环境配置
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -371,6 +409,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -593,6 +638,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

@@ -3,6 +3,15 @@
   
     
     <entry>
+      <title><![CDATA[解决v-html元素中的标签样式]]></title>
+      <url>/2020/04/24/%E8%A7%A3%E5%86%B3v-html%E5%85%83%E7%B4%A0%E4%B8%AD%E7%9A%84%E6%A0%87%E7%AD%BE%E6%A0%B7%E5%BC%8F/</url>
+      <content type="html"><![CDATA[<p>当我们通过v-html渲染时，有时会需要修改一下样式，但是无法直接在style中修改样式，这是因为我们style带有scoped了，scoped属性导致css只对当前组件生效，而v-html渲染出来的内容可以理解为是子组件内容，css无法穿透，无法给子组件添加上对应的css属性。所以我们可以把scoped属性去掉，但是这样别的组件也会受影响，最好的办法就是在当前组件的最外层div加上一个固定id标识，这样就不会污染别的组件的css了。还有个方法就是创建两个style标签，一个带scoped，一个不带scoped，不带scoped的只写需要更改css样式的元素，类名一定要唯一，避免污染别的组件。其实scoped看起来很美好，但是含有很多的坑，所以，不推荐使用scoped属性，而通过在外层dom上添加唯一的class来区分不同组件。这种方法既实现了类似于scoped的效果，又方便修改各种第三方组件的样式，代码看起来也相对舒适。</p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Flutter环境配置]]></title>
       <url>/2019/12/30/flutter/</url>
       <content type="html"><![CDATA[<h1 id="1-从如下地址下载对应的flutter-SDK，点击如图下载最新版本sdk。"><a href="#1-从如下地址下载对应的flutter-SDK，点击如图下载最新版本sdk。" class="headerlink" title="1.从如下地址下载对应的flutter SDK，点击如图下载最新版本sdk。"></a>1.从如下地址下载对应的flutter SDK，点击如图下载最新版本sdk。</h1><p>flutterSDK下载地址：<a href="https://flutter.dev/docs/get-started/install/windows" target="_blank" rel="external">https://flutter.dev/docs/get-started/install/windows</a></p>
@@ -78,7 +87,7 @@
     </entry>
     
     <entry>
-      <title><![CDATA[VueCli 3.0使用人适配移动端步骤]]></title>
+      <title><![CDATA[VueCli 3.0使用rem适配移动端步骤]]></title>
       <url>/2019/12/27/rem/</url>
       <content type="html"><![CDATA[<p>首先需要先安装’lib-flexible’插件，安装成功之后再main.js引入。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm i lib-flexible</div><div class="line"><span class="comment">//在main.js引入</span></div><div class="line"><span class="keyword">import</span> <span class="string">'lib-flexible'</span></div></pre></td></tr></table></figure>
