@@ -3,6 +3,25 @@
   
     
     <entry>
+      <title><![CDATA[Vue中input弹出带搜索键盘和回车搜索]]></title>
+      <url>/2020/04/27/Vue%E4%B8%ADinput%E5%BC%B9%E5%87%BA%E5%B8%A6%E6%90%9C%E7%B4%A2%E9%94%AE%E7%9B%98%E5%92%8C%E5%9B%9E%E8%BD%A6%E6%90%9C%E7%B4%A2/</url>
+      <content type="html"><![CDATA[<p>在手机键盘上触发搜索键达到搜索的功能。</p>
+<ol>
+<li>首先input的type要设置为search</li>
+<li>input外面套上form</li>
+<li>form加上action属性，<code>active=&quot;javascript:return true&quot;</code>，再加上@<code>submit.prevent</code>防止提交</li>
+<li>监听搜索事件@<code>keyup.13</code></li>
+<li>手动<code>blur</code>，否则键盘不会自动收起</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span></span></div><div class="line">  <span class="attr">action</span>=<span class="string">"javascript:return true;"</span></div><div class="line">  @<span class="attr">submit.prevent</span></div><div class="line">&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">input</span></span></div><div class="line">    <span class="attr">ref</span>=<span class="string">"searchInput"</span></div><div class="line">    <span class="attr">v-model</span>=<span class="string">"keyword"</span></div><div class="line">    <span class="attr">type</span>=<span class="string">"search"</span></div><div class="line">    <span class="attr">placeholder</span>=<span class="string">"请输入关键字"</span></div><div class="line">    @<span class="attr">keyup.13</span>=<span class="string">"search()"</span></div><div class="line">  &gt;</div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">methods: &#123;</div><div class="line">    search() &#123;</div><div class="line">      <span class="keyword">this</span>.$refs.searchInput.blur();  </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这样就完成了移动端键盘搜索的功能。</p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[解决v-html元素中的标签样式]]></title>
       <url>/2020/04/24/%E8%A7%A3%E5%86%B3v-html%E5%85%83%E7%B4%A0%E4%B8%AD%E7%9A%84%E6%A0%87%E7%AD%BE%E6%A0%B7%E5%BC%8F/</url>
       <content type="html"><![CDATA[<p>当我们通过v-html渲染时，有时会需要修改一下样式，但是无法直接在style中修改样式，这是因为我们style带有scoped了，scoped属性导致css只对当前组件生效，而v-html渲染出来的内容可以理解为是子组件内容，css无法穿透，无法给子组件添加上对应的css属性。所以我们可以把scoped属性去掉，但是这样别的组件也会受影响，最好的办法就是在当前组件的最外层div加上一个固定id标识，这样就不会污染别的组件的css了。还有个方法就是创建两个style标签，一个带scoped，一个不带scoped，不带scoped的只写需要更改css样式的元素，类名一定要唯一，避免污染别的组件。其实scoped看起来很美好，但是含有很多的坑，所以，不推荐使用scoped属性，而通过在外层dom上添加唯一的class来区分不同组件。这种方法既实现了类似于scoped的效果，又方便修改各种第三方组件的样式，代码看起来也相对舒适。</p>

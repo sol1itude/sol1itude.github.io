@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="首先需要先安装’lib-flexible’插件，安装成功之后再main.js引入。 123npm i lib-flexible//在main.js引入import &apos;lib-flexible&apos; 安装postcss-px2rem插件 1npm i postcss-px2rem 最后在package.json中配置一下，添加如下代码12345678&quot;postcss&quot;: &amp;#123;    &quot;plugi">
+<meta name="description" content="在手机键盘上触发搜索键达到搜索的功能。  首先input的type要设置为search input外面套上form form加上action属性，active=&amp;quot;javascript:return true&amp;quot;，再加上@submit.prevent防止提交 监听搜索事件@keyup.13 手动blur，否则键盘不会自动收起  123456789101112&amp;lt;form  ac">
 <meta property="og:type" content="article">
-<meta property="og:title" content="VueCli 3.0使用rem适配移动端步骤">
-<meta property="og:url" content="http://yoursite.com/2019/12/27/rem/index.html">
+<meta property="og:title" content="Vue中input弹出带搜索键盘和回车搜索">
+<meta property="og:url" content="http://yoursite.com/2020/04/27/Vue中input弹出带搜索键盘和回车搜索/index.html">
 <meta property="og:site_name" content="博客">
-<meta property="og:description" content="首先需要先安装’lib-flexible’插件，安装成功之后再main.js引入。 123npm i lib-flexible//在main.js引入import &apos;lib-flexible&apos; 安装postcss-px2rem插件 1npm i postcss-px2rem 最后在package.json中配置一下，添加如下代码12345678&quot;postcss&quot;: &amp;#123;    &quot;plugi">
-<meta property="og:updated_time" content="2020-04-24T07:54:21.166Z">
+<meta property="og:description" content="在手机键盘上触发搜索键达到搜索的功能。  首先input的type要设置为search input外面套上form form加上action属性，active=&amp;quot;javascript:return true&amp;quot;，再加上@submit.prevent防止提交 监听搜索事件@keyup.13 手动blur，否则键盘不会自动收起  123456789101112&amp;lt;form  ac">
+<meta property="og:updated_time" content="2020-04-27T09:00:34.163Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VueCli 3.0使用rem适配移动端步骤">
-<meta name="twitter:description" content="首先需要先安装’lib-flexible’插件，安装成功之后再main.js引入。 123npm i lib-flexible//在main.js引入import &apos;lib-flexible&apos; 安装postcss-px2rem插件 1npm i postcss-px2rem 最后在package.json中配置一下，添加如下代码12345678&quot;postcss&quot;: &amp;#123;    &quot;plugi">
+<meta name="twitter:title" content="Vue中input弹出带搜索键盘和回车搜索">
+<meta name="twitter:description" content="在手机键盘上触发搜索键达到搜索的功能。  首先input的type要设置为search input外面套上form form加上action属性，active=&amp;quot;javascript:return true&amp;quot;，再加上@submit.prevent防止提交 监听搜索事件@keyup.13 手动blur，否则键盘不会自动收起  123456789101112&amp;lt;form  ac">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/12/27/rem/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/04/27/Vue中input弹出带搜索键盘和回车搜索/"/>
 
 
 
 
 
-  <title>VueCli 3.0使用rem适配移动端步骤 | 博客</title>
+  <title>Vue中input弹出带搜索键盘和回车搜索 | 博客</title>
   
 
 
@@ -240,7 +240,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/27/rem/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/27/Vue中input弹出带搜索键盘和回车搜索/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="王风杰">
@@ -257,7 +257,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">VueCli 3.0使用rem适配移动端步骤</h1>
+          <h1 class="post-title" itemprop="name headline">Vue中input弹出带搜索键盘和回车搜索</h1>
         
 
         <div class="post-meta">
@@ -269,8 +269,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-27T11:00:39+08:00">
-                2019-12-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-27T17:00:16+08:00">
+                2020-04-27
               </time>
             
 
@@ -288,8 +288,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/12/27/rem/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/12/27/rem/" itemprop="commentCount"></span>
+                <a href="/2020/04/27/Vue中input弹出带搜索键盘和回车搜索/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/27/Vue中input弹出带搜索键盘和回车搜索/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -311,7 +311,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  120
+                  125
                 </span>
               
 
@@ -348,12 +348,17 @@
       
 
       
-        <p>首先需要先安装’lib-flexible’插件，安装成功之后再main.js引入。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm i lib-flexible</div><div class="line"><span class="comment">//在main.js引入</span></div><div class="line"><span class="keyword">import</span> <span class="string">'lib-flexible'</span></div></pre></td></tr></table></figure>
-<p>安装postcss-px2rem插件</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm i postcss-px2rem</div></pre></td></tr></table></figure>
-<p>最后在package.json中配置一下，添加如下代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="string">"postcss"</span>: &#123;</div><div class="line">    <span class="string">"plugins"</span>: &#123;</div><div class="line">        <span class="string">"autoprefixer"</span>: &#123;&#125;,</div><div class="line">        <span class="string">"postcss-px2rem"</span>: &#123;</div><div class="line">            <span class="string">"remUnit"</span>: <span class="number">75</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>接下来就可以直接在.vue文件中用px做单位了，运行时会自动转化为rem单位。如果有些样式不需要rem，直接把px写成大写PX就行了。</p>
+        <p>在手机键盘上触发搜索键达到搜索的功能。</p>
+<ol>
+<li>首先input的type要设置为search</li>
+<li>input外面套上form</li>
+<li>form加上action属性，<code>active=&quot;javascript:return true&quot;</code>，再加上@<code>submit.prevent</code>防止提交</li>
+<li>监听搜索事件@<code>keyup.13</code></li>
+<li>手动<code>blur</code>，否则键盘不会自动收起</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span></span></div><div class="line">  <span class="attr">action</span>=<span class="string">"javascript:return true;"</span></div><div class="line">  @<span class="attr">submit.prevent</span></div><div class="line">&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">input</span></span></div><div class="line">    <span class="attr">ref</span>=<span class="string">"searchInput"</span></div><div class="line">    <span class="attr">v-model</span>=<span class="string">"keyword"</span></div><div class="line">    <span class="attr">type</span>=<span class="string">"search"</span></div><div class="line">    <span class="attr">placeholder</span>=<span class="string">"请输入关键字"</span></div><div class="line">    @<span class="attr">keyup.13</span>=<span class="string">"search()"</span></div><div class="line">  &gt;</div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">methods: &#123;</div><div class="line">    search() &#123;</div><div class="line">      <span class="keyword">this</span>.$refs.searchInput.blur();  </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这样就完成了移动端键盘搜索的功能。</p>
 
       
     </div>
@@ -378,8 +383,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/16/regularExpression/" rel="next" title="收集到的正则表达式">
-                <i class="fa fa-chevron-left"></i> 收集到的正则表达式
+              <a href="/2020/04/24/解决v-html元素中的标签样式/" rel="next" title="解决v-html元素中的标签样式">
+                <i class="fa fa-chevron-left"></i> 解决v-html元素中的标签样式
               </a>
             
           </div>
@@ -387,10 +392,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/12/27/yarn和npm区别/" rel="prev" title="yarn和npm区别">
-                yarn和npm区别 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
