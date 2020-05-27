@@ -3,6 +3,47 @@
   
     
     <entry>
+      <title><![CDATA[处理Vue异常的方法]]></title>
+      <url>/2020/05/27/%E5%A4%84%E7%90%86Vue%E5%BC%82%E5%B8%B8%E7%9A%84%E6%96%B9%E6%B3%95/</url>
+      <content type="html"><![CDATA[<p>最近做Vue开发，整理了一些平时处理异常的方法，一般有下面几种方法：</p>
+<ul>
+<li>errorHandler</li>
+<li>warnHandler</li>
+<li>renderError</li>
+<li>errorCaptured</li>
+<li>window.onerror(不仅仅针对Vue)</li>
+</ul>
+<h2 id="1-errorHandler"><a href="#1-errorHandler" class="headerlink" title="1.errorHandler"></a>1.errorHandler</h2><p><code>errorHandler</code>是<code>Vue</code>中最广泛使用的异常处理方式。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Vue.config.errorHandler = <span class="function"><span class="keyword">function</span>(<span class="params">err, vm, info</span>) </span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">`Error: <span class="subst">$&#123;err.toString()&#125;</span>\nInfo: <span class="subst">$&#123;info&#125;</span>`</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>err</code>指代error对象，<code>info</code>是一个Vue特有的字符串，<code>vm</code>指代Vue应用本身。记住在一个页面你可以有多个Vue应用。这个error handler作用到所有的应用。</p>
+<h2 id="2-warnHandler"><a href="#2-warnHandler" class="headerlink" title="2.warnHandler"></a>2.warnHandler</h2><p><a href="https://vuejs.org/v2/api/#warnHandler" target="_blank" rel="external">warnHandler</a>用来捕获Vue warning。记住在生产环境是不起作用的。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Vue.config.warnHandler = <span class="function"><span class="keyword">function</span>(<span class="params">msg, vm, trace</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">`Warn: <span class="subst">$&#123;msg&#125;</span>\nTrace: <span class="subst">$&#123;trace&#125;</span>`</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>msg</code>和<code>vm</code>都容易理解，<code>trace</code>代表了组件树。</p>
+<h2 id="3-renderError"><a href="#3-renderError" class="headerlink" title="3.renderError"></a>3.renderError</h2><p>和前面两个不同，这个技巧不适用于全局，和组件相关。并且只适用于非生产环境。</p>
+<p>下面是一个简单的例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">el</span>:<span class="string">'#app'</span>,</div><div class="line">  renderError (h, err) &#123;</div><div class="line">    <span class="keyword">return</span> h(<span class="string">'pre'</span>, &#123; <span class="attr">style</span>: &#123; <span class="attr">color</span>: <span class="string">'red'</span> &#125;&#125;, err.stack)</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h2 id="4-errorCaptured"><a href="#4-errorCaptured" class="headerlink" title="4.errorCaptured"></a>4.errorCaptured</h2><p><a href="https://cn.vuejs.org/v2/api/#errorCaptured" target="_blank" rel="external">errorCaptured</a>是最后一个和Vue相关的技巧，这个技巧让我很迷惑，现在还是有点搞不明白。文档是这么介绍的：</p>
+<blockquote>
+<p>当捕获一个来自子孙组件的错误时被调用。此钩子会收到三个参数：错误对象、发生错误的组件实例以及一个包含错误来源信息的字符串。此钩子可以返回 <code>false</code> 以阻止该错误继续向上传播。</p>
+</blockquote>
+<p>为了测试，我构造了下面的例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">Vue.component(<span class="string">'cat'</span>, &#123;</div><div class="line">  <span class="attr">template</span>:<span class="string">`</span></div><div class="line">&lt;div&gt;&lt;h1&gt;Cat: &lt;/h1&gt;</div><div class="line">  &lt;slot&gt;&lt;/slot&gt;</div><div class="line">&lt;/div&gt;`,</div><div class="line">  <span class="attr">props</span>:&#123;</div><div class="line">    <span class="attr">name</span>:&#123;</div><div class="line">      <span class="attr">required</span>:<span class="literal">true</span>,</div><div class="line">      <span class="attr">type</span>:<span class="built_in">String</span></div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">   errorCaptured(err,vm,info) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">`cat EC: <span class="subst">$&#123;err.toString()&#125;</span>\ninfo: <span class="subst">$&#123;info&#125;</span>`</span>); </div><div class="line">     <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;);</div><div class="line"></div><div class="line">Vue.component(<span class="string">'kitten'</span>, &#123;</div><div class="line">  <span class="attr">template</span>:<span class="string">'&lt;div&gt;&lt;h1&gt;Kitten: &#123;&#123; dontexist() &#125;&#125;&lt;/h1&gt;&lt;/div&gt;'</span>,</div><div class="line">  <span class="attr">props</span>:&#123;</div><div class="line">    <span class="attr">name</span>:&#123;</div><div class="line">      <span class="attr">required</span>:<span class="literal">true</span>,</div><div class="line">      <span class="attr">type</span>:<span class="built_in">String</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>注意 <code>kitten</code> 组件的代码是有BUG的。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div id=<span class="string">"app"</span> v-cloak&gt;</div><div class="line">  <span class="xml"><span class="tag">&lt;<span class="name">cat</span> <span class="attr">name</span>=<span class="string">"my cat"</span>&gt;</span></span></div><div class="line">      <span class="tag">&lt;<span class="name">kitten</span>&gt;</span><span class="tag">&lt;/<span class="name">kitten</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">cat</span>&gt;</span></div><div class="line">&lt;<span class="regexp">/div&gt;</span></div></pre></td></tr></table></figure>
+<p>捕获的信息如下:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cat EC: <span class="built_in">TypeError</span>: dontexist is not a <span class="function"><span class="keyword">function</span></span></div><div class="line"><span class="title">info</span>: <span class="title">render</span></div></pre></td></tr></table></figure>
+<h2 id="5-window-onerror"><a href="#5-window-onerror" class="headerlink" title="5.window.onerror"></a>5.window.onerror</h2><p>最后也是最重要的一个候选项 <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onerror" target="_blank" rel="external">window.onerror</a>。它是一个全局的异常处理函数，可以抓取所有的JavaScript异常。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.onerror = <span class="function"><span class="keyword">function</span>(<span class="params">message, source, line, column, error</span>) </span>&#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>我想函数的参数中只有<code>source</code>难以从字面上理解吧，它代表了当前的URL。</p>
+<p>接下来事情就比较好玩了。如果你定义了<code>onerror</code>，但是没有启用<code>Vue.config.errorHandler</code>，那么有很多异常都抓不到。Vue希望你要定义它，否则异常不会抛出去的。这到底有没有意义？我不是很懂，我觉得没必要，甚至有点奇怪。</p>
+<p>如果定义<code>errorHandler</code>的代码有BUG，那么运行起来也不会被<code>onerror</code>抓到。下面的例子中，如果将<code>oopsIDidItAgain()</code>解注释，你就会发现这个问题。只有第二个按钮没有和Vue绑定，所以报错无论如何都会被抓到</p>
+<p>具体可参考网站：<a href="https://blog.csdn.net/Fundebug/article/details/92570054" target="_blank" rel="external">5种处理Vue异常的方法</a></p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Vue中input弹出带搜索键盘和回车搜索]]></title>
       <url>/2020/04/27/Vue%E4%B8%ADinput%E5%BC%B9%E5%87%BA%E5%B8%A6%E6%90%9C%E7%B4%A2%E9%94%AE%E7%9B%98%E5%92%8C%E5%9B%9E%E8%BD%A6%E6%90%9C%E7%B4%A2/</url>
       <content type="html"><![CDATA[<p>在手机键盘上触发搜索键达到搜索的功能。</p>

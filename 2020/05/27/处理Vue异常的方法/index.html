@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="使用vue.js搭建一个移动端项目，怎样做到自适应呢？当然选择rem布局是比较方便快捷的。之前项目中是使用的淘宝的flexible方案，在vue中也可以继续使用这种方法。 1.下载安装lib-flexible如果使用的是vue-cli+webpack构建的项目，可以直接使用npm来安装1npm i lib-flexible --save 2.引入lib-flexible在main.js中引入lib">
+<meta name="description" content="最近做Vue开发，整理了一些平时处理异常的方法，一般有下面几种方法：  errorHandler warnHandler renderError errorCaptured window.onerror(不仅仅针对Vue)  1.errorHandlererrorHandler是Vue中最广泛使用的异常处理方式。 123Vue.config.errorHandler = function(err,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在vue使用rem实现移动端自适配">
-<meta property="og:url" content="http://yoursite.com/2018/08/31/在vue使用rem实现移动端自适配/index.html">
+<meta property="og:title" content="处理Vue异常的方法">
+<meta property="og:url" content="http://yoursite.com/2020/05/27/处理Vue异常的方法/index.html">
 <meta property="og:site_name" content="博客">
-<meta property="og:description" content="使用vue.js搭建一个移动端项目，怎样做到自适应呢？当然选择rem布局是比较方便快捷的。之前项目中是使用的淘宝的flexible方案，在vue中也可以继续使用这种方法。 1.下载安装lib-flexible如果使用的是vue-cli+webpack构建的项目，可以直接使用npm来安装1npm i lib-flexible --save 2.引入lib-flexible在main.js中引入lib">
-<meta property="og:updated_time" content="2018-11-29T09:21:07.483Z">
+<meta property="og:description" content="最近做Vue开发，整理了一些平时处理异常的方法，一般有下面几种方法：  errorHandler warnHandler renderError errorCaptured window.onerror(不仅仅针对Vue)  1.errorHandlererrorHandler是Vue中最广泛使用的异常处理方式。 123Vue.config.errorHandler = function(err,">
+<meta property="og:updated_time" content="2020-05-27T07:54:39.430Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在vue使用rem实现移动端自适配">
-<meta name="twitter:description" content="使用vue.js搭建一个移动端项目，怎样做到自适应呢？当然选择rem布局是比较方便快捷的。之前项目中是使用的淘宝的flexible方案，在vue中也可以继续使用这种方法。 1.下载安装lib-flexible如果使用的是vue-cli+webpack构建的项目，可以直接使用npm来安装1npm i lib-flexible --save 2.引入lib-flexible在main.js中引入lib">
+<meta name="twitter:title" content="处理Vue异常的方法">
+<meta name="twitter:description" content="最近做Vue开发，整理了一些平时处理异常的方法，一般有下面几种方法：  errorHandler warnHandler renderError errorCaptured window.onerror(不仅仅针对Vue)  1.errorHandlererrorHandler是Vue中最广泛使用的异常处理方式。 123Vue.config.errorHandler = function(err,">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/31/在vue使用rem实现移动端自适配/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/05/27/处理Vue异常的方法/"/>
 
 
 
 
 
-  <title>在vue使用rem实现移动端自适配 | 博客</title>
+  <title>处理Vue异常的方法 | 博客</title>
   
 
 
@@ -240,7 +240,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/31/在vue使用rem实现移动端自适配/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/27/处理Vue异常的方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="王风杰">
@@ -257,7 +257,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">在vue使用rem实现移动端自适配</h1>
+          <h1 class="post-title" itemprop="name headline">处理Vue异常的方法</h1>
         
 
         <div class="post-meta">
@@ -269,8 +269,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-31T16:13:21+08:00">
-                2018-08-31
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-27T15:37:16+08:00">
+                2020-05-27
               </time>
             
 
@@ -288,8 +288,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/08/31/在vue使用rem实现移动端自适配/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/08/31/在vue使用rem实现移动端自适配/" itemprop="commentCount"></span>
+                <a href="/2020/05/27/处理Vue异常的方法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/27/处理Vue异常的方法/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -311,7 +311,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  427
+                  702
                 </span>
               
 
@@ -327,7 +327,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  3
                 </span>
               
             </div>
@@ -348,14 +348,39 @@
       
 
       
-        <p>使用vue.js搭建一个移动端项目，怎样做到自适应呢？当然选择rem布局是比较方便快捷的。之前项目中是使用的淘宝的flexible方案，在vue中也可以继续使用这种方法。</p>
-<h1 id="1-下载安装lib-flexible"><a href="#1-下载安装lib-flexible" class="headerlink" title="1.下载安装lib-flexible"></a>1.下载安装lib-flexible</h1><p>如果使用的是vue-cli+webpack构建的项目，可以直接使用npm来安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm i lib-flexible --save</div></pre></td></tr></table></figure></p>
-<h1 id="2-引入lib-flexible"><a href="#2-引入lib-flexible" class="headerlink" title="2.引入lib-flexible"></a>2.引入lib-flexible</h1><p>在main.js中引入lib-flexible<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import &apos;lib-flexible/flexible&apos;</div></pre></td></tr></table></figure></p>
-<h1 id="3-设置meta标签"><a href="#3-设置meta标签" class="headerlink" title="3.设置meta标签"></a>3.设置meta标签</h1><p>在项目根目录的index.html 头部加入手机端适配的meta的代码<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<h1 id="4-安装px2rem-loader"><a href="#4-安装px2rem-loader" class="headerlink" title="4.安装px2rem-loader"></a>4.安装px2rem-loader</h1><p>在实际的开发中，使用flexible插件时 会自动把px转换成rem单位。在vue-cli中安装过lib-flexible之后 ，将px转换成rem，我们将使用px2rem这个工具。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install px2rem-loader</div></pre></td></tr></table></figure></p>
-<h1 id="5-配置px2rem-loader"><a href="#5-配置px2rem-loader" class="headerlink" title="5.配置px2rem-loader"></a>5.配置px2rem-loader</h1><p>在vue-cli生成的webpack 配置中，vue-loader 的options和其他样式文件loader 最终都是由build/untils.js里的一个方法生成的。所以我们打开build/untils.js文件找到cssLoader，在cssLoader后面添加px2remLoader，如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> cssLoader = &#123;</div><div class="line">    <span class="attr">loader</span>: <span class="string">'css-loader'</span>,</div><div class="line">    <span class="attr">options</span>: &#123;</div><div class="line">      <span class="attr">minimize</span>: process.env.NODE_ENV === <span class="string">'production'</span>,</div><div class="line">      <span class="attr">sourceMap</span>: options.sourceMap</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="keyword">const</span> px2remLoader = &#123;</div><div class="line">    <span class="attr">loader</span>: <span class="string">'px2rem-loader'</span>,</div><div class="line">    <span class="attr">options</span>: &#123;</div><div class="line">        <span class="attr">remUnit</span>: <span class="number">75</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>然后找到generateLoaders 方法，在方法里面的loaders数组中添加刚才写的px2remLoader，如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">generateLoaders</span> (<span class="params">loader, loaderOptions</span>) </span>&#123;</div><div class="line">    <span class="keyword">const</span> loaders = [cssLoader,px2remLoader, postcssLoader]</div><div class="line">    <span class="keyword">if</span> (loader) &#123;</div><div class="line">      loaders.push(&#123;</div><div class="line">        <span class="attr">loader</span>: loader + <span class="string">'-loader'</span>,</div><div class="line">        <span class="attr">options</span>: <span class="built_in">Object</span>.assign(&#123;&#125;, loaderOptions, &#123;</div><div class="line">          <span class="attr">sourceMap</span>: options.sourceMap</div><div class="line">        &#125;)</div><div class="line">      &#125;)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h1 id="6-重新运行项目就可以使用了"><a href="#6-重新运行项目就可以使用了" class="headerlink" title="6.重新运行项目就可以使用了"></a>6.重新运行项目就可以使用了</h1><p>直接在项目里写px页面就会编译成rem；这样直接就可以按设计图的尺寸写布局了，如果某个元素不想使用rem，直接在后面写/<em>no</em>/就可以，如下<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span>&#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;<span class="comment">/*no*/</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <p>最近做Vue开发，整理了一些平时处理异常的方法，一般有下面几种方法：</p>
+<ul>
+<li>errorHandler</li>
+<li>warnHandler</li>
+<li>renderError</li>
+<li>errorCaptured</li>
+<li>window.onerror(不仅仅针对Vue)</li>
+</ul>
+<h2 id="1-errorHandler"><a href="#1-errorHandler" class="headerlink" title="1.errorHandler"></a>1.errorHandler</h2><p><code>errorHandler</code>是<code>Vue</code>中最广泛使用的异常处理方式。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Vue.config.errorHandler = <span class="function"><span class="keyword">function</span>(<span class="params">err, vm, info</span>) </span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">`Error: <span class="subst">$&#123;err.toString()&#125;</span>\nInfo: <span class="subst">$&#123;info&#125;</span>`</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>err</code>指代error对象，<code>info</code>是一个Vue特有的字符串，<code>vm</code>指代Vue应用本身。记住在一个页面你可以有多个Vue应用。这个error handler作用到所有的应用。</p>
+<h2 id="2-warnHandler"><a href="#2-warnHandler" class="headerlink" title="2.warnHandler"></a>2.warnHandler</h2><p><a href="https://vuejs.org/v2/api/#warnHandler" target="_blank" rel="external">warnHandler</a>用来捕获Vue warning。记住在生产环境是不起作用的。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Vue.config.warnHandler = <span class="function"><span class="keyword">function</span>(<span class="params">msg, vm, trace</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">`Warn: <span class="subst">$&#123;msg&#125;</span>\nTrace: <span class="subst">$&#123;trace&#125;</span>`</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>msg</code>和<code>vm</code>都容易理解，<code>trace</code>代表了组件树。</p>
+<h2 id="3-renderError"><a href="#3-renderError" class="headerlink" title="3.renderError"></a>3.renderError</h2><p>和前面两个不同，这个技巧不适用于全局，和组件相关。并且只适用于非生产环境。</p>
+<p>下面是一个简单的例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">el</span>:<span class="string">'#app'</span>,</div><div class="line">  renderError (h, err) &#123;</div><div class="line">    <span class="keyword">return</span> h(<span class="string">'pre'</span>, &#123; <span class="attr">style</span>: &#123; <span class="attr">color</span>: <span class="string">'red'</span> &#125;&#125;, err.stack)</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h2 id="4-errorCaptured"><a href="#4-errorCaptured" class="headerlink" title="4.errorCaptured"></a>4.errorCaptured</h2><p><a href="https://cn.vuejs.org/v2/api/#errorCaptured" target="_blank" rel="external">errorCaptured</a>是最后一个和Vue相关的技巧，这个技巧让我很迷惑，现在还是有点搞不明白。文档是这么介绍的：</p>
+<blockquote>
+<p>当捕获一个来自子孙组件的错误时被调用。此钩子会收到三个参数：错误对象、发生错误的组件实例以及一个包含错误来源信息的字符串。此钩子可以返回 <code>false</code> 以阻止该错误继续向上传播。</p>
+</blockquote>
+<p>为了测试，我构造了下面的例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">Vue.component(<span class="string">'cat'</span>, &#123;</div><div class="line">  <span class="attr">template</span>:<span class="string">`</span></div><div class="line">&lt;div&gt;&lt;h1&gt;Cat: &lt;/h1&gt;</div><div class="line">  &lt;slot&gt;&lt;/slot&gt;</div><div class="line">&lt;/div&gt;`,</div><div class="line">  <span class="attr">props</span>:&#123;</div><div class="line">    <span class="attr">name</span>:&#123;</div><div class="line">      <span class="attr">required</span>:<span class="literal">true</span>,</div><div class="line">      <span class="attr">type</span>:<span class="built_in">String</span></div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">   errorCaptured(err,vm,info) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">`cat EC: <span class="subst">$&#123;err.toString()&#125;</span>\ninfo: <span class="subst">$&#123;info&#125;</span>`</span>); </div><div class="line">     <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;);</div><div class="line"></div><div class="line">Vue.component(<span class="string">'kitten'</span>, &#123;</div><div class="line">  <span class="attr">template</span>:<span class="string">'&lt;div&gt;&lt;h1&gt;Kitten: &#123;&#123; dontexist() &#125;&#125;&lt;/h1&gt;&lt;/div&gt;'</span>,</div><div class="line">  <span class="attr">props</span>:&#123;</div><div class="line">    <span class="attr">name</span>:&#123;</div><div class="line">      <span class="attr">required</span>:<span class="literal">true</span>,</div><div class="line">      <span class="attr">type</span>:<span class="built_in">String</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>注意 <code>kitten</code> 组件的代码是有BUG的。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div id=<span class="string">"app"</span> v-cloak&gt;</div><div class="line">  <span class="xml"><span class="tag">&lt;<span class="name">cat</span> <span class="attr">name</span>=<span class="string">"my cat"</span>&gt;</span></span></div><div class="line">      <span class="tag">&lt;<span class="name">kitten</span>&gt;</span><span class="tag">&lt;/<span class="name">kitten</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">cat</span>&gt;</span></div><div class="line">&lt;<span class="regexp">/div&gt;</span></div></pre></td></tr></table></figure>
+<p>捕获的信息如下:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cat EC: <span class="built_in">TypeError</span>: dontexist is not a <span class="function"><span class="keyword">function</span></span></div><div class="line"><span class="title">info</span>: <span class="title">render</span></div></pre></td></tr></table></figure>
+<h2 id="5-window-onerror"><a href="#5-window-onerror" class="headerlink" title="5.window.onerror"></a>5.window.onerror</h2><p>最后也是最重要的一个候选项 <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onerror" target="_blank" rel="external">window.onerror</a>。它是一个全局的异常处理函数，可以抓取所有的JavaScript异常。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.onerror = <span class="function"><span class="keyword">function</span>(<span class="params">message, source, line, column, error</span>) </span>&#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>我想函数的参数中只有<code>source</code>难以从字面上理解吧，它代表了当前的URL。</p>
+<p>接下来事情就比较好玩了。如果你定义了<code>onerror</code>，但是没有启用<code>Vue.config.errorHandler</code>，那么有很多异常都抓不到。Vue希望你要定义它，否则异常不会抛出去的。这到底有没有意义？我不是很懂，我觉得没必要，甚至有点奇怪。</p>
+<p>如果定义<code>errorHandler</code>的代码有BUG，那么运行起来也不会被<code>onerror</code>抓到。下面的例子中，如果将<code>oopsIDidItAgain()</code>解注释，你就会发现这个问题。只有第二个按钮没有和Vue绑定，所以报错无论如何都会被抓到</p>
+<p>具体可参考网站：<a href="https://blog.csdn.net/Fundebug/article/details/92570054" target="_blank" rel="external">5种处理Vue异常的方法</a></p>
 
       
     </div>
@@ -380,8 +405,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/06/mpvue使用总结/" rel="next" title="mpvue使用总结">
-                <i class="fa fa-chevron-left"></i> mpvue使用总结
+              <a href="/2020/04/27/Vue中input弹出带搜索键盘和回车搜索/" rel="next" title="Vue中input弹出带搜索键盘和回车搜索">
+                <i class="fa fa-chevron-left"></i> Vue中input弹出带搜索键盘和回车搜索
               </a>
             
           </div>
@@ -389,10 +414,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/29/vue开发遇到的问题/" rel="prev" title="vue开发遇到的问题">
-                vue开发遇到的问题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -523,7 +544,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-下载安装lib-flexible"><span class="nav-number">1.</span> <span class="nav-text">1.下载安装lib-flexible</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-引入lib-flexible"><span class="nav-number">2.</span> <span class="nav-text">2.引入lib-flexible</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-设置meta标签"><span class="nav-number">3.</span> <span class="nav-text">3.设置meta标签</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-安装px2rem-loader"><span class="nav-number">4.</span> <span class="nav-text">4.安装px2rem-loader</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-配置px2rem-loader"><span class="nav-number">5.</span> <span class="nav-text">5.配置px2rem-loader</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-重新运行项目就可以使用了"><span class="nav-number">6.</span> <span class="nav-text">6.重新运行项目就可以使用了</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-errorHandler"><span class="nav-number">1.</span> <span class="nav-text">1.errorHandler</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-warnHandler"><span class="nav-number">2.</span> <span class="nav-text">2.warnHandler</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-renderError"><span class="nav-number">3.</span> <span class="nav-text">3.renderError</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-errorCaptured"><span class="nav-number">4.</span> <span class="nav-text">4.errorCaptured</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-window-onerror"><span class="nav-number">5.</span> <span class="nav-text">5.window.onerror</span></a></li></ol></div>
             
 
           </div>
